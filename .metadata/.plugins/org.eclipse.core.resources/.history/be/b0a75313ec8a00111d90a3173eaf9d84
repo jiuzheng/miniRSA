@@ -24,7 +24,6 @@ public class RSA {
 		public final long d;
 		PrivateKey(long N, long d) {
 			this.N = N;
-			this.d = d;
+			this.e = d;
 		}
-	}
 }

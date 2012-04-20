@@ -21,10 +21,9 @@ public class RSA {
 	// Private key contains N and d
 	public static class PrivateKey {
 		public final long N;
-		public final long d;
-		PrivateKey(long N, long d) {
+		public final long e;
+		PublicKey(long N, long e) {
 			this.N = N;
-			this.d = d;
+			this.e = e;
 		}
-	}
 }

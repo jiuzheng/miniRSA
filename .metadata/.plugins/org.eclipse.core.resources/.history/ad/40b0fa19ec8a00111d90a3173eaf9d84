@@ -26,5 +26,4 @@ public class RSA {
 			this.N = N;
 			this.d = d;
 		}
-	}
 }
