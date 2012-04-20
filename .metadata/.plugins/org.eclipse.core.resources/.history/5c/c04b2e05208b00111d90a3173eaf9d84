@@ -115,12 +115,5 @@ public class RSA {
 	private static long primeNumber(int index) {
 		long primeNumber = 1;
 		long count = 0;
-		while (count < index) {
-			primeNumber++;
-			if (isPrime(primeNumber)) {
-				count++;
-			}
-		}
-		return primeNumber;
 	}
 }

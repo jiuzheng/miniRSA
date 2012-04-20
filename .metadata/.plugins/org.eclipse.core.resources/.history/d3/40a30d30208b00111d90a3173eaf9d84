@@ -117,10 +117,7 @@ public class RSA {
 		long count = 0;
 		while (count < index) {
 			primeNumber++;
-			if (isPrime(primeNumber)) {
-				count++;
-			}
+			if ()
 		}
-		return primeNumber;
 	}
 }

@@ -111,16 +111,7 @@ public class RSA {
 		return true;
 	}
 	
-	// Get the prime numer in the position of given index
 	private static long primeNumber(int index) {
-		long primeNumber = 1;
-		long count = 0;
-		while (count < index) {
-			primeNumber++;
-			if (isPrime(primeNumber)) {
-				count++;
-			}
-		}
-		return primeNumber;
+		
 	}
 }

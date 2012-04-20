@@ -103,24 +103,8 @@ public class RSA {
 	
 	// Check if a number is a prime number
 	private static boolean isPrime(long number) {
-		for (long i = 2; i < Math.sqrt(number); i++) {
-			if (number % i == 0) {
-				return false;
-			}
+		for (long i = 2; i < sqrt(number); i++) {
+			if (number % 2)
 		}
-		return true;
-	}
-	
-	// Get the prime numer in the position of given index
-	private static long primeNumber(int index) {
-		long primeNumber = 1;
-		long count = 0;
-		while (count < index) {
-			primeNumber++;
-			if (isPrime(primeNumber)) {
-				count++;
-			}
-		}
-		return primeNumber;
 	}
 }

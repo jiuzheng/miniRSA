@@ -85,7 +85,7 @@ public class RSA {
 		return plaintext;
 	}
 	
-	// Transferred message is in byte, decrypt it in byte with RSA
+	// Decrypt 
 	public static String decrypt(PrivateKey privateKey, byte[] ciphertext) {
 		long[] ciphertextLong = new long[ciphertext.length / 8];
 		for (int i = 0; i < ciphertextLong.length; i++) {
@@ -101,26 +101,7 @@ public class RSA {
 		return decrypt(privateKey, ciphertextLong);
 	}
 	
-	// Check if a number is a prime number
 	private static boolean isPrime(long number) {
-		for (long i = 2; i < Math.sqrt(number); i++) {
-			if (number % i == 0) {
-				return false;
-			}
-		}
-		return true;
-	}
-	
-	// Get the prime numer in the position of given index
-	private static long primeNumber(int index) {
-		long primeNumber = 1;
-		long count = 0;
-		while (count < index) {
-			primeNumber++;
-			if (isPrime(primeNumber)) {
-				count++;
-			}
-		}
-		return primeNumber;
+		
 	}
 }
