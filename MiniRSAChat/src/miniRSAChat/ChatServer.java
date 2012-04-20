@@ -6,7 +6,11 @@ import java.util.Random;
 import java.util.Scanner;
 
 class ChatServer implements Runnable {
+<<<<<<< HEAD
   
+=======
+	
+>>>>>>> New code push
 	static ServerSocket serverSocket = null;
 	static Socket clientSocket = null;
 	static PrintStream os = null;
