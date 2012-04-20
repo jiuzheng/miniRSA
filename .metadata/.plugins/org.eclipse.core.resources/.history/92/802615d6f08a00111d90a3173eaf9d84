@@ -5,8 +5,7 @@ package miniRSAChat;
 
 /**
  * @author Jie Qi
- * @version April 20, 2012
- * This class provides RSA algorithm implementation and encrypt/decrypt on it. 
+ *
  */
 public class RSA {
 	// Public key contains N and e
@@ -41,11 +40,11 @@ public class RSA {
 		}
 	}
 	
-	// Encrpyt char to ciphertext with public key e in RSA algorithm
-	static public long encryptChar(PublicKey public_key, char ch) {
+	// Encrpyt plaintext to ciphertext with public key e in RSA algorithm
+	static public long encrypt(PublicKey public_key, char ch) {
 		long chValue = (long)ch;
 		long resultValue = 1;
-		// encryption in mode N
+		// encryption 
 		for (int i = 0; i < public_key.e; i++) {
 			resultValue *= chValue;
 			resultValue = resultValue % public_key.N;
@@ -53,15 +52,8 @@ public class RSA {
 		return resultValue;
 	}
 	
-	// Encrypt plaintext string to ciphertext in char unit with public key e in RSA
 	static public long[] encrpyt(PublicKey public_key, String plain_text) {
-		long[] cipher_text = new long[plain_text.length()];
-		char[] plain_chars = plain_text.toCharArray();
-		// encryption char by char
-		for (int i = 0; i < plain_chars.length; i++) {
-			cipher_text[i] = encryptChar(public_key.e, plain_chars[i]);
-		}
-		return cipher_text;
+		
 	}
 	
 }
