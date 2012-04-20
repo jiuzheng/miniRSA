@@ -103,7 +103,8 @@ public class RSA {
 	
 	// Check if a number is a prime number
 	private static boolean isPrime(long number) {
-		for (long i = 2; i < Math.sqrt(number); i++) {
+		if (number % 2 == 0) return false;
+		for (long i = 3; i < Math.sqrt(number); i+= 2) {
 			if (number % i == 0) {
 				return false;
 			}
@@ -122,5 +123,39 @@ public class RSA {
 			}
 		}
 		return primeNumber;
+	}
+	
+	// Crack a private key by inputting its public key
+	public static PrivateKey bruteForce(PublicKey publicKey) {
+		
+		long N = publicKey.N;
+		long e = publicKey.e;
+		PrivateKey privateKey = null;
+		Encryptor encryptor = new Encryptor(publicKey);
+		Decryptor decryptor;
+		
+		int iteration = 1;
+		
+		while(iteration < N) {
+			iteration++;
+			long prime = primeNumber(iteration);
+			if(N % prime == 0) {
+				long p = prime;
+				long q = N / prime;
+				long m = (p - 1) * (q - 1);
+				int i = 1;
+				while ((i * m + 1) % e != 0) {
+					i++;
+				}
+				long d = (i * m + 1) / e;
+				privateKey = new PrivateKey(N, d);
+				decryptor = new Decryptor(privateKey);
+				if("Hello!".equals(decryptor.decrypt(encryptor.encrypt("Hello!")))){
+					break;
+				}
+			}
+		}
+		
+		return privateKey;
 	}
 }
