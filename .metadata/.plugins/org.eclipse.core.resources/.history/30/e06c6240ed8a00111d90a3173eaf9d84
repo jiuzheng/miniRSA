@@ -27,14 +27,13 @@ public class RSA {
 			this.d = d;
 		}
 	}
-
+	_key
 	// Key pair of public and private key
 	public static class RSAKeyPair {
 		public final PublicKey public_key;
 		public final PrivateKey private_key;
-		RSAKeyPair(PublicKey public_key, PrivateKey private_key) {
-			this.public_key = public_key;
-			this.private_key = private_key;
+		RSAKeyPair(PublicKey public_key, PrivateKey private) {
+			this.public_key = 
 		}
 	}
 }
