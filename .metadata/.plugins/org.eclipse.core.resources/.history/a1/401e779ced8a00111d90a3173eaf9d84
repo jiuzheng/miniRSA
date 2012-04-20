@@ -23,7 +23,6 @@ public class RSA {
 	public static class PrivateKey {
 		public final long N;
 		public final long d;
-		// Constructs a PrivateKey
 		PrivateKey(long N, long d) {
 			this.N = N;
 			this.d = d;
