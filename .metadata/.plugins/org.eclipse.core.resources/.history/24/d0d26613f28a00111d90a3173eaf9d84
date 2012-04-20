@@ -59,7 +59,7 @@ public class RSA {
 		char[] plain_chars = plain_text.toCharArray();
 		// encryption char by char
 		for (int i = 0; i < plain_chars.length; i++) {
-			cipher_text[i] = encryptChar(public_key, plain_chars[i]);
+			cipher_text[i] = encryptChar(public_key.e, plain_chars[i]);
 		}
 		return cipher_text;
 	}
