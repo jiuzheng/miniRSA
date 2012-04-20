@@ -35,9 +35,9 @@ public class RSA {
 	public static class RSAKeyPair {
 		public final PublicKey publicKey;
 		public final PrivateKey privateKey;
-		RSAKeyPair(PublicKey publicKey, PrivateKey privateKey) {
+		RSAKeyPair(PublicKey publicKey, PrivateKey private_key) {
 			this.publicKey = publicKey;
-			this.privateKey = privateKey;
+			this.privateKey = private_key;
 		}
 	}
 	
@@ -64,16 +64,12 @@ public class RSA {
 		return ciphertext;
 	}
 	
-	// Decrypt with private key in RSA
 	static public char decrypt(PrivateKey privateKey, long ch) {
 		long chValue = (long)ch;
 		long resultValue = 1;
 		for (int i = 0; i < privateKey.d; i++) {
-			resultValue *= chValue;
-			resultValue = resultValue % privateKey.N;
+			
 		}
-		char result = (char)resultValue;
-		return result;
 	}
 	
 }

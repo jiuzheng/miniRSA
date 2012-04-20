@@ -72,8 +72,6 @@ public class RSA {
 			resultValue *= chValue;
 			resultValue = resultValue % privateKey.N;
 		}
-		char result = (char)resultValue;
-		return result;
 	}
 	
 }

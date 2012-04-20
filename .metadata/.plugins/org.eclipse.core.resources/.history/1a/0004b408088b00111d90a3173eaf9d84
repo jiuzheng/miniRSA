@@ -64,16 +64,13 @@ public class RSA {
 		return ciphertext;
 	}
 	
-	// Decrypt with private key in RSA
+	// Decrypt with private key
 	static public char decrypt(PrivateKey privateKey, long ch) {
 		long chValue = (long)ch;
 		long resultValue = 1;
 		for (int i = 0; i < privateKey.d; i++) {
-			resultValue *= chValue;
-			resultValue = resultValue % privateKey.N;
+			
 		}
-		char result = (char)resultValue;
-		return result;
 	}
 	
 }

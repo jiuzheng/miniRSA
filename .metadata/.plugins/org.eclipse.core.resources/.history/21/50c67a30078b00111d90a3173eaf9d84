@@ -35,9 +35,9 @@ public class RSA {
 	public static class RSAKeyPair {
 		public final PublicKey publicKey;
 		public final PrivateKey privateKey;
-		RSAKeyPair(PublicKey publicKey, PrivateKey privateKey) {
-			this.publicKey = publicKey;
-			this.privateKey = privateKey;
+		RSAKeyPair(PublicKey public_key, PrivateKey private_key) {
+			this.publicKey = public_key;
+			this.privateKey = private_key;
 		}
 	}
 	
@@ -54,26 +54,22 @@ public class RSA {
 	}
 	
 	// Encrypt plaintext string to ciphertext in char unit with public key e in RSA
-	static public long[] encrpyt(PublicKey publicKey, String plaintext) {
-		long[] ciphertext = new long[plaintext.length()];
-		char[] plainChars = plaintext.toCharArray();
+	static public long[] encrpyt(PublicKey publicKey, String plainText) {
+		long[] cipherText = new long[plainText.length()];
+		char[] plainChars = plainText.toCharArray();
 		// encryption char by char
 		for (int i = 0; i < plainChars.length; i++) {
-			ciphertext[i] = encryptChar(publicKey, plainChars[i]);
+			cipherText[i] = encryptChar(publicKey, plainChars[i]);
 		}
-		return ciphertext;
+		return cipherText;
 	}
 	
-	// Decrypt with private key in RSA
 	static public char decrypt(PrivateKey privateKey, long ch) {
 		long chValue = (long)ch;
 		long resultValue = 1;
 		for (int i = 0; i < privateKey.d; i++) {
-			resultValue *= chValue;
-			resultValue = resultValue % privateKey.N;
+			
 		}
-		char result = (char)resultValue;
-		return result;
 	}
 	
 }

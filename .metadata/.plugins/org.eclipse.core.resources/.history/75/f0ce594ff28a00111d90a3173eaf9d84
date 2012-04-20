@@ -33,47 +33,37 @@ public class RSA {
 
 	// Key pair of public and private key
 	public static class RSAKeyPair {
-		public final PublicKey publicKey;
-		public final PrivateKey privateKey;
-		RSAKeyPair(PublicKey publicKey, PrivateKey privateKey) {
-			this.publicKey = publicKey;
-			this.privateKey = privateKey;
+		public final PublicKey public_key;
+		public final PrivateKey private_key;
+		RSAKeyPair(PublicKey public_key, PrivateKey private_key) {
+			this.public_key = public_key;
+			this.private_key = private_key;
 		}
 	}
 	
 	// Encrpyt char to ciphertext with public key e in RSA algorithm
-	static public long encryptChar(PublicKey publicKey, char ch) {
+	static public long encryptChar(PublicKey public_key, char ch) {
 		long chValue = (long)ch;
 		long resultValue = 1;
 		// encryption in mode N
-		for (int i = 0; i < publicKey.e; i++) {
+		for (int i = 0; i < public_key.e; i++) {
 			resultValue *= chValue;
-			resultValue = resultValue % publicKey.N;
+			resultValue = resultValue % public_key.N;
 		}
 		return resultValue;
 	}
 	
 	// Encrypt plaintext string to ciphertext in char unit with public key e in RSA
-	static public long[] encrpyt(PublicKey publicKey, String plaintext) {
-		long[] ciphertext = new long[plaintext.length()];
-		char[] plainChars = plaintext.toCharArray();
+	static public long[] encrpyt(PublicKey public_key, String plain_text) {
+		long[] cipher_text = new long[plain_text.length()];
+		char[] plain_chars = plain_text.toCharArray();
 		// encryption char by char
-		for (int i = 0; i < plainChars.length; i++) {
-			ciphertext[i] = encryptChar(publicKey, plainChars[i]);
+		for (int i = 0; i < plain_chars.length; i++) {
+			cipher_text[i] = encryptChar(public_key, plain_chars[i]);
 		}
-		return ciphertext;
+		return cipher_text;
 	}
 	
-	// Decrypt with private key in RSA
-	static public char decrypt(PrivateKey privateKey, long ch) {
-		long chValue = (long)ch;
-		long resultValue = 1;
-		for (int i = 0; i < privateKey.d; i++) {
-			resultValue *= chValue;
-			resultValue = resultValue % privateKey.N;
-		}
-		char result = (char)resultValue;
-		return result;
-	}
+	static public long 
 	
 }
