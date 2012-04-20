@@ -1,0 +1,14 @@
+/**
+ * 
+ */
+package miniRSAChat;
+
+/**
+ * @author Jie Qi
+ *
+ */
+public class RSA {
+	// Public key contains N, e
+	public final long N;
+	public final long e;
+}

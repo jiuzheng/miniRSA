@@ -17,6 +17,7 @@ public class RSA {
 			this.e = e;
 		}
 	}
-
+	
+	// Private key contains N and d
 
 }
