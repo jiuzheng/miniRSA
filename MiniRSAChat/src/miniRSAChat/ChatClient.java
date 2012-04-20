@@ -6,11 +6,7 @@ import java.util.Scanner;
 
 class ChatClient implements Runnable {
     
-<<<<<<< HEAD
-  static Socket clientSocket = null;
-=======
 	static Socket clientSocket = null;
->>>>>>> New code push
 	static PrintStream os = null;
 	static BufferedReader is = null;
 	static BufferedReader inputLine = null;
