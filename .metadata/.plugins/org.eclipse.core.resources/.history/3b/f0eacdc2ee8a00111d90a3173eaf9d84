@@ -40,7 +40,7 @@ public class RSA {
 		}
 	}
 	
-	// Encrpytion of plaintext
+	//
 	static public long encrypt(PublicKey public_key, char ch) {
 		long chValue = (long)ch;
 		long resultValue = 1;
@@ -50,5 +50,4 @@ public class RSA {
 		}
 		return resultValue;
 	}
-	
 }

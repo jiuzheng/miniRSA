@@ -40,15 +40,13 @@ public class RSA {
 		}
 	}
 	
-	// Encrpytion of plaintext
 	static public long encrypt(PublicKey public_key, char ch) {
 		long chValue = (long)ch;
 		long resultValue = 1;
-		for (int i = 0; i < public_key.e; i++) {
-			resultValue *= chValue;
-			resultValue = resultValue % public_key.N;
+		for () {
+			
 		}
+		
 		return resultValue;
 	}
-	
 }
