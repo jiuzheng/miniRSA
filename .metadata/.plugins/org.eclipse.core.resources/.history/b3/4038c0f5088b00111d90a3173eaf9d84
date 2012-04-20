@@ -41,8 +41,8 @@ public class RSA {
 		}
 	}
 	
-	// Encrpyt char plaintext to long ciphertext with public key e in RSA algorithm
-	public static long encryptChar(PublicKey publicKey, char ch) {
+	// Encrpyt char to ciphertext with public key e in RSA algorithm
+	static public long encryptChar(PublicKey publicKey, char ch) {
 		long chValue = (long)ch;
 		long resultValue = 1;
 		// encryption in mode N
@@ -53,8 +53,8 @@ public class RSA {
 		return resultValue;
 	}
 	
-	// Encrypt plaintext string to long ciphertext with public key e in RSA
-	public static long[] encrpyt(PublicKey publicKey, String plaintext) {
+	// Encrypt plaintext string to ciphertext in char unit with public key e in RSA
+	static public long[] encrpyt(PublicKey publicKey, String plaintext) {
 		long[] ciphertext = new long[plaintext.length()];
 		char[] plainChars = plaintext.toCharArray();
 		// encryption char by char
@@ -64,25 +64,17 @@ public class RSA {
 		return ciphertext;
 	}
 	
-	// Decrypt long ciphertext to plaintext char with private key in RSA
-	public static char decrypt(PrivateKey privateKey, long ciphertext) {
-		long cipherValue = ciphertext;
+	// Decrypt with private key in RSA
+	static public char decrypt(PrivateKey privateKey, long ch) {
+		long chValue = (long)ch;
 		long resultValue = 1;
 		for (int i = 0; i < privateKey.d; i++) {
-			resultValue *= cipherValue;
+			resultValue *= chValue;
 			resultValue = resultValue % privateKey.N;
 		}
 		char result = (char)resultValue;
 		return result;
 	}
 	
-	// Decrypt long array of ciphertext to string plaintext with private key in RSA
-	public static String decrypt(PrivateKey privateKey, long[] ciphertext) {
-		String plaintext = "";
-		for (int i = 0; i < ciphertext.length; i++) {
-			plaintext += String.valueOf(decrypt(privateKey, ciphertext));
-		}
-		return plaintext;
-	}
 	
 }

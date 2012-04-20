@@ -80,9 +80,8 @@ public class RSA {
 	public static String decrypt(PrivateKey privateKey, long[] ciphertext) {
 		String plaintext = "";
 		for (int i = 0; i < ciphertext.length; i++) {
-			plaintext += String.valueOf(decrypt(privateKey, ciphertext));
+			
 		}
 		return plaintext;
 	}
-	
 }

@@ -41,7 +41,7 @@ public class RSA {
 		}
 	}
 	
-	// Encrpyt char plaintext to long ciphertext with public key e in RSA algorithm
+	// Encrpyt char to long ciphertext with public key e in RSA algorithm
 	public static long encryptChar(PublicKey publicKey, char ch) {
 		long chValue = (long)ch;
 		long resultValue = 1;
@@ -64,7 +64,7 @@ public class RSA {
 		return ciphertext;
 	}
 	
-	// Decrypt long ciphertext to plaintext char with private key in RSA
+	// Decrypt long ciphertext to char plaintext with private key  in RSA
 	public static char decrypt(PrivateKey privateKey, long ciphertext) {
 		long cipherValue = ciphertext;
 		long resultValue = 1;
@@ -80,9 +80,8 @@ public class RSA {
 	public static String decrypt(PrivateKey privateKey, long[] ciphertext) {
 		String plaintext = "";
 		for (int i = 0; i < ciphertext.length; i++) {
-			plaintext += String.valueOf(decrypt(privateKey, ciphertext));
+			
 		}
 		return plaintext;
 	}
-	
 }
