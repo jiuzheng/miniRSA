@@ -1,5 +1,3 @@
-package miniRSAChat;
-
 import java.io.*;
 import java.net.*;
 import java.util.Random;
@@ -73,7 +71,7 @@ class ChatServer implements Runnable {
 					byte[] ciphertext = encryptor.encrypt(message);
 					os.write(ciphertext);
 					// End of modification.
-					if (message.startsWith("quit")) break;
+					if (message.startsWith(".quit")) break;
 					if (message.startsWith(".brute force")) {
 						RSA.PrivateKey crackedOwnKey = RSA.bruteForce(keys.publicKey);
 				        System.out.println("The server's private key is: " + String.valueOf(keys.privateKey.d) + " " +
@@ -110,6 +108,7 @@ class ChatServer implements Runnable {
 				System.arraycopy(responseBuffer, 0, response, 0, responseSize);
 				String plaintext = decryptor.decrypt(response);
 				System.out.println("\nClient: " + plaintext);
+                System.out.print("Server: ");
 				if (plaintext.startsWith(".quit")) {
 					break;
 				}

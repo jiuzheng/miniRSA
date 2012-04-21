@@ -1,5 +1,3 @@
-package miniRSAChat;
-
 import java.io.*;
 import java.net.*;
 import java.util.Random;
@@ -105,6 +103,7 @@ class ChatClient implements Runnable {
 				System.arraycopy(responseBuffer, 0, response, 0, responseSize);
 				String plaintext = decryptor.decrypt(response);
 				System.out.println("\nServer: " + plaintext);
+                System.out.print("Client: ");
 				if (plaintext.startsWith(".quit")) {
 					break;
 				}
