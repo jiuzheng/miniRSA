@@ -1,0 +1,34 @@
+make runServer
+java ChatServer
+
+The server's public key is: 22741 66659
+Input the client's public key: 36221 189209
+Waiting for connection...
+Server has connected!
+Server: 
+Client: Hello dear server!
+Server: Hello my client!
+Server: 
+Client: Do you mind if I crack your private key?
+Server: Nope. Go ahead
+Server: 
+Client: .brute force
+Server: Ouch! That hurts!
+Server: My turn
+Server: .brute force
+p is found to be: 191
+q is found to be: 349
+d is found to be: 39301
+The server's private key is: 39301 66659
+You cracked your own key!: 39301 66659
+p is found to be: 431
+q is found to be: 439
+d is found to be: 28661
+You cracked your client's key!: 28661 189209
+Server: 
+Client: That's boring.
+Server: 
+Client: I am leaving
+Server: 
+Client: .quit
+Server: Wait! Aww... he left
