@@ -1,4 +1,4 @@
-package miniRSAChat;
+//package miniRSAChat;
 
 import java.io.*;
 import java.net.*;
