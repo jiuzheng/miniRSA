@@ -1,4 +1,20 @@
 package miniRSAChat;
+
+
+/**
+ * @author Jie Qi
+ * @version April 20, 2012
+ * This class provides RSA algorithm implementation and encrypt/decrypt on it. 
+ */
+/**
+ * @author dianachih
+ *
+ */
+/**
+ * @author dianachih
+ *
+ */
+
 public class RSA {
 	/*
 	 * Public Key class contains N, e
@@ -119,7 +135,7 @@ public class RSA {
 		return 1;
 	}
 	
-	static public RSAKeyPair genKeyPair(long seed) {
+	static public RSAKeyPair genKeyPair() {
 		long N = 0;
 		long e = 0;
 		long d = 0;
@@ -211,7 +227,7 @@ public class RSA {
 		return true;
 	}
 	
-	// Get the prime numer in the position of given index
+	// Get the prime number in the position of given index
 	private static long primeNumber(int index) {
 		long primeNumber = 1;
 		long count = 0;
@@ -224,6 +240,7 @@ public class RSA {
 		return primeNumber;
 	}
 	
+
 	// Crack a private key by inputting its public key
 	public static PrivateKey bruteForce(PublicKey publicKey) {
 		
@@ -254,7 +271,8 @@ public class RSA {
 				}
 			}
 		}
-		
 		return privateKey;
 	}
 }
+	
+
