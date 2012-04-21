@@ -115,7 +115,7 @@ public class RSA {
 	 */
 	private static boolean isPrime(long number) {
 		if (number % 2 == 0) return false;
-		for (long i = 3; i <= number / 2; i+= 1) {
+		for (long i = 3; i <= number / 2; i+= 2) {
 			if (number % i == 0) {
 				return false;
 			}
