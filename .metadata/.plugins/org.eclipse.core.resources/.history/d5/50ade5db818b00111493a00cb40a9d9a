@@ -1,11 +1,11 @@
 package miniRSAChat;
 
 /**
- * @author Jie Qi
- * @author Jiuzheng Chen
- * @version April 21, 2012
+ * @author Jie Qi, Jiuzheng Chen
+ * @version April 20, 2012
  * This class provides RSA algorithm implementation and encrypt/decrypt on it. 
  */
+
 public class RSA {
 	// Public key contains N and e
 	public static class PublicKey {

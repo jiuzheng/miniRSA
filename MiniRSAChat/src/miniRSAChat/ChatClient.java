@@ -6,7 +6,8 @@ import java.util.Random;
 import java.util.Scanner;
 
 /**
- * @author Jie Qi, Jiuzheng Chen
+ * @author Jie Qi
+ * @author Jiuzheng Chen
  * @version April 20, 2012
  * This class implements operations of chat client.
  */

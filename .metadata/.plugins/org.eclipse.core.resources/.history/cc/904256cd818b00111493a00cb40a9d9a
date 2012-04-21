@@ -2,6 +2,7 @@ package miniRSAChat;
 
 import java.util.Random;
 
+
 /**
  * @author Jie Qi
  * @version April 20, 2012
