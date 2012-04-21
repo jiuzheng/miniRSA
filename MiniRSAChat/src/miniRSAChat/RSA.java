@@ -1,3 +1,5 @@
+package miniRSAChat;
+
 /**
  * @author Jie Qi, Jiuzheng Chen
  * @version April 20, 2012

@@ -1,3 +1,5 @@
+package miniRSAChat;
+
 import java.util.Random;
 
 
