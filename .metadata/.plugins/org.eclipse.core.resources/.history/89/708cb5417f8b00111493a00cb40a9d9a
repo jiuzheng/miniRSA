@@ -18,9 +18,7 @@ public class RSA {
 		}
 	}
 	
-	/**
-	 * Private key contains N and d
-	 */
+	// Private key contains N and d
 	public static class PrivateKey {
 		public final long N;
 		public final long d;
@@ -353,7 +351,6 @@ public class RSA {
 		}
 		
 		/**
-		 * Decrypt ciphertext to plaintext with privateKey
 		 * @param ciphertext Long int message ciphertext.
 		 * @return Decrypted plaintext char.
 		 */
