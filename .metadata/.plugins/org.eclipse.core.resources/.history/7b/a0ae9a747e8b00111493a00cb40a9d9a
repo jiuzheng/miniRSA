@@ -1,4 +1,5 @@
 package miniRSAChat;
+import Global;
 
 /**
  * @author Jie Qi, Jiuzheng Chen
