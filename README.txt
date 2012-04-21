@@ -2,6 +2,7 @@ Hello Dear TA!
 
 This is project group: Jie Qi and Jiuzheng Chen!
 We proudly present our miniRSA project.
+GITHUB: https://github.com/jiuzheng/miniRSA
 
 User manual: (You may also use Eclipse to run)
 1. "make"
